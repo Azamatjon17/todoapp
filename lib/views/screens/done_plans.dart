@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:todoapp/controller/plane_controller.dart';
-import 'package:todoapp/models/plane.dart';
 import 'package:todoapp/views/widgets/palnewidget.dart';
 
 // ignore: must_be_immutable
@@ -21,9 +20,6 @@ class _DonePlansState extends State<DonePlans> {
         for (int i = 0; i < widget.planeController.plans.length; i++)
           Column(
             children: [
-              const SizedBox(
-                height: 20,
-              ),
               widget.planeController.plans[i].iscomplate
                   ? Palnewidget(
                       widget.planeController.plans[i],

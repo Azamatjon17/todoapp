@@ -21,9 +21,6 @@ class _InProcessState extends State<InProcess> {
         for (int i = 0; i < widget.planeController.plans.length; i++)
           Column(
             children: [
-              const SizedBox(
-                height: 20,
-              ),
               !widget.planeController.plans[i].iscomplate
                   ? Palnewidget(
                       widget.planeController.plans[i],

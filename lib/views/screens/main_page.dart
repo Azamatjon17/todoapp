@@ -28,19 +28,19 @@ class _MainPageState extends State<MainPage> {
             "Todo App",
             style: TextStyle(fontWeight: FontWeight.bold),
           ),
-          bottom: TabBar(
+          bottom: const TabBar(
             tabs: [
               Tab(
-                icon: const Icon(Icons.all_inbox_outlined),
-                text: "All ${planeController.plans.length}",
+                icon: Icon(Icons.all_inbox_outlined),
+                text: "All ",
               ),
               Tab(
-                icon: const Icon(Icons.done),
-                text: "Done ${planeController.doneplans.length}",
+                icon: Icon(Icons.done),
+                text: "Done ",
               ),
               Tab(
-                icon: const Icon(CupertinoIcons.clock),
-                text: "In prosses  ${planeController.inprosses.length}",
+                icon: Icon(CupertinoIcons.clock),
+                text: "In prosses  ",
               )
             ],
           ),

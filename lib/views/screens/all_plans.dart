@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:todoapp/controller/plane_controller.dart';
-import 'package:todoapp/models/plane.dart';
+
 import 'package:todoapp/views/widgets/palnewidget.dart';
 
 // ignore: must_be_immutable
