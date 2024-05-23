@@ -4,6 +4,7 @@ import 'package:todoapp/controller/plane_controller.dart';
 import 'package:todoapp/views/screens/all_plans.dart';
 import 'package:todoapp/views/screens/done_plans.dart';
 import 'package:todoapp/views/screens/in_process.dart';
+import 'package:todoapp/views/widgets/showdialog.dart';
 
 class MainPage extends StatefulWidget {
   MainPage({super.key});
@@ -14,6 +15,10 @@ class MainPage extends StatefulWidget {
 
 class _MainPageState extends State<MainPage> {
   PlaneController planeController = PlaneController();
+
+  refresh() {
+    setState(() {});
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +62,13 @@ class _MainPageState extends State<MainPage> {
           ],
         ),
         floatingActionButton: FloatingActionButton(
-          onPressed: () {},
+          onPressed: () {
+            showDialog(
+                context: context,
+                builder: (context) {
+                  return Dialogmain(planeController, refresh);
+                });
+          },
           child: const Icon(Icons.add),
         ),
       ),
