@@ -4,6 +4,7 @@ import 'package:flutter/widgets.dart';
 import 'package:gap/gap.dart';
 import 'package:todoapp/controller/plane_controller.dart';
 
+// ignore: must_be_immutable
 class Dialogmain extends StatefulWidget {
   PlaneController planeController;
   Function() refresh;
@@ -28,7 +29,7 @@ class _DialogmainState extends State<Dialogmain> {
           children: [
             TextField(
               controller: planecontroller,
-              decoration: InputDecoration(border: OutlineInputBorder(), hintText: "plan name"),
+              decoration: const InputDecoration(border: OutlineInputBorder(), hintText: "plan name"),
             ),
             const Gap(15),
             ElevatedButton(
