@@ -2,11 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:todoapp/models/plane.dart';
 
 // ignore: must_be_immutable
-class Palnewidget extends StatelessWidget {
+class Palnewidget extends StatefulWidget {
   Function() editfunction;
   Function() deletefunction;
   Plane plane;
   Palnewidget(this.plane, {super.key, required this.editfunction, required this.deletefunction});
+
+  @override
+  State<Palnewidget> createState() => _PalnewidgetState();
+}
+
+class _PalnewidgetState extends State<Palnewidget> {
+  bool isdone = false;
 
   @override
   Widget build(BuildContext context) {
@@ -17,20 +24,27 @@ class Palnewidget extends StatelessWidget {
       ),
       padding: const EdgeInsets.all(10),
       child: ListTile(
-        title: Text(plane.name),
-        subtitle: Text("${plane.time.day}-${plane.time.month}-${plane.time.year}   ${plane.time.minute}:${plane.time.hour}"),
+        leading: Checkbox(
+          value: isdone,
+          onChanged: (value) {
+            isdone = true;
+            setState(() {});
+          },
+        ),
+        title: Text(widget.plane.name),
+        subtitle: Text("${widget.plane.time.day}-${widget.plane.time.month}-${widget.plane.time.year}   ${widget.plane.time.minute}:${widget.plane.time.hour}"),
         trailing: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
             IconButton(
-              onPressed: editfunction,
+              onPressed: widget.editfunction,
               icon: const Icon(
                 Icons.edit,
                 color: Colors.blue,
               ),
             ),
             IconButton(
-              onPressed: deletefunction,
+              onPressed: widget.deletefunction,
               icon: const Icon(
                 Icons.delete,
                 color: Colors.red,

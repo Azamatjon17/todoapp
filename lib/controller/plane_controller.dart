@@ -24,26 +24,10 @@ class PlaneController {
     Plane(name: "Airbus A310", time: DateTime.parse("2024-05-23 03:00:00"), iscomplate: true),
   ];
 
-  List<Plane> get plans => _list;
-  List<Plane> get doneplans {
-    List<Plane> done = [];
-    for (int i = 0; i < _list.length; i++) {
-      if (_list[i].iscomplate == true) {
-        done.add(_list[i]);
-      }
-    }
-    return done;
-  }
+  List<Plane> get plans => [..._list];
 
-  List<Plane> get inprosses {
-    List<Plane> inprosses = [];
-    for (int i = 0; i < _list.length; i++) {
-      if (_list[i].iscomplate == false) {
-        inprosses.add(_list[i]);
-      }
-    }
-    return inprosses;
-  }
+
+  
 
   void add({required String name, required DateTime time}) {
     _list.add(Plane(name: name, time: time, iscomplate: false));

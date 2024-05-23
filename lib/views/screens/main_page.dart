@@ -47,12 +47,12 @@ class _MainPageState extends State<MainPage> {
         ),
         body: TabBarView(
           children: [
-            AllPlans(planeController.plans, planeController),
+            AllPlans(planeController),
             DonePlans(
-              planeController.doneplans,
+              planeController,
             ),
             InProcess(
-              planeController.inprosses,
+              planeController,
             )
           ],
         ),
