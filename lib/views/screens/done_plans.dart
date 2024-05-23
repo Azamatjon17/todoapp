@@ -38,7 +38,7 @@ class _DonePlansState extends State<DonePlans> {
               Palnewidget(
                 done[i],
                 deletefunction: () {
-                  widget.planeController.delete(i);
+                  done.removeAt(i);
                   setState(() {});
                 },
                 editfunction: () {},

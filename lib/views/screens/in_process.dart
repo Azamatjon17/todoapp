@@ -39,7 +39,7 @@ class _InProcessState extends State<InProcess> {
               Palnewidget(
                 inProcess[i],
                 deletefunction: () {
-                  widget.planeController.delete(i);
+                  inProcess.removeAt(i);
                   setState(() {});
                 },
                 editfunction: () {},
